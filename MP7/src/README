@@ -1,0 +1,7 @@
+README
+Sorting Machine - Carl Guo and Joel Zhang
+
+This program is meant for the programmer to play around with the sorting algorithms given. The runner prompts the user with 
+two options: Sort an array and compare runtimes. When sorting an array, the program will prompt four options for the user: quicksort, 
+bubblesort, insertionsort, and mergesort. Compare runtimes will compare and display the runtimes of each of these algorithms on an 
+unsorted array.
