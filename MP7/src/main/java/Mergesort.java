@@ -9,25 +9,25 @@ public class Mergesort {
 	 * @param hi - high boundary
 	 */
 	public void merge(int arr[], int l, int m, int r) {
-		int n1 = m - l + 1;
-		int n2 = r - m;
-		int left[] = new int[n1];
-		int right[] = new int[n2];
+		int len1 = m - l + 1;
+		int len2 = r - m;
+		int left[] = new int[len1];
+		int right[] = new int[len2];
 		System.out.println("Split original array into left and right array" +
-		" with size " + n1 + " and " + n2 + " respectively.");
-		for (int i = 0; i < n1; ++i) {
+		" with size " + len1 + " and " + len2 + " respectively.");
+		for (int i = 0; i < len1; ++i) {
 			left[i] = arr[l + i];
 		}
 		System.out.print("Left array: ");
 		printArr(left);
-		for (int j = 0; j < n2; ++j) {
+		for (int j = 0; j < len2; ++j) {
 			right[j] = arr[m + 1 + j];
 		}
 		System.out.print("Right array: ");
 		printArr(right);
 		int i = 0, j = 0;
 		int k = l;
-		while (i < n1 && j < n2) {
+		while (i < len1 && j < len2) {
 			if (left[i] <= right[j]) {
 				arr[k] = left[i];
 				i++;
@@ -37,12 +37,12 @@ public class Mergesort {
 			}
 			k++;
 		}
-		while (i < n1) {
+		while (i < len1) {
 			arr[k] = left[i];
 			i++;
 			k++;
 		}
-		while (j < n2) {
+		while (j < len2) {
 			arr[k] = right[j];
 			j++;
 			k++;
