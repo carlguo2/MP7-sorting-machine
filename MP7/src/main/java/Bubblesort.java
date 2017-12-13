@@ -1,7 +1,12 @@
 package main.java;
 
 public class Bubblesort {
-	public void bubbleSort(int arr[]) {
+	/**
+	 * Actual bubble sort algorithm.
+	 * 
+	 * @param arr - unsorted array we are trying to sort.
+	 */
+	public void bubbleSort(final int arr[]) {
 		int n = arr.length;
 		for (int i = 0; i < n - 1; i++)
 			for (int j = 0; j < n - i - 1; j++)
@@ -16,7 +21,12 @@ public class Bubblesort {
 				}
 	}
 
-	public static void printArray(int arr[]) {
+	/**
+	 * Method to print out the array values.
+	 * 
+	 * @param arr - array we are trying to print out.
+	 */
+	public static void printArray(final int arr[]) {
 		System.out.print("[");
 		for (int i = 0; i < arr.length; i++) {
 			if (i != arr.length - 1) {
@@ -29,7 +39,12 @@ public class Bubblesort {
 		System.out.println("");
 	}
 
-	public static void main(String args[]) {
+	/**
+	 * Main method used as a tester for the sorting algorithm.
+	 * 
+	 * @param args - empty array.
+	 */
+	public static void main(final String args[]) {
 		long start = System.currentTimeMillis();
 		int arr[] = { 10, 7, 8, 9, 1, 5, 6, 4, 6, 8, 10, 5, 7, 3, 2, 6, 3};
 		Bubblesort ob = new Bubblesort();

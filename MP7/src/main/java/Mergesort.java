@@ -2,9 +2,9 @@ package main.java;
 
 public class Mergesort {
 	/**
-	 * mergesort main method.
+	 * This method does the merging of arrays in the merge sort.
 	 *
-	 * @param data - data array we are sorting
+	 * @param data - data array we are sorting.
 	 * @param lo - low boundary
 	 * @param hi - high boundary
 	 */
@@ -52,6 +52,13 @@ public class Mergesort {
 		System.out.println("");
 	}
 
+	/**
+	 * The sort method which does the recursive work and actual merge sort.
+	 * 
+	 * @param arr - unsorted array.
+	 * @param l - left boundary of the array.
+	 * @param r - right boundary of the array.
+	 */
 	public void sort(int arr[], int l, int r) {
 		if (l < r) {
 			int m = (l + r) / 2;
@@ -64,7 +71,7 @@ public class Mergesort {
 	/**
 	 * print data array we are currently sorting
 	 * 
-	 * @param data
+	 * @param data - array which we will print.
 	 */
 	public static void printArr(final int[] data) { // array format.
 		System.out.print("[");
@@ -79,6 +86,11 @@ public class Mergesort {
 		System.out.println("");
 	}
 
+	/**
+	 * main method made to test how merge sort works
+	 * 
+	 * @param args - empty array
+	 */
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
 		int arr[] = { 10, 7, 8, 9, 1, 5, 6, 4, 6, 8, 10, 5, 7, 3, 2, 6, 3};

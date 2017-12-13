@@ -1,7 +1,12 @@
 package main.java;
 
 public class Insertsort {
-		public void sort(int arr[])
+	/**
+	 * Actual sort using the insertion sort algorithm.
+	 * 
+	 * @param arr - the unsorted array we are trying to sort.
+	 */
+		public void sort(final int arr[])
 		{
 	    	int n = arr.length;
 	    	for (int i = 1; i < n; ++i)
@@ -22,7 +27,13 @@ public class Insertsort {
             	System.out.println("");
 	    	}
 		}
-		public static void printArray(int arr[]) {
+		
+		/**
+		 * Method to print out the array values.
+		 * 
+		 * @param arr - array we are trying to print out.
+		 */
+		public static void printArray(final int arr[]) {
 	   		 System.out.print("[");
 	         	for (int i = 0; i < arr.length; i++) {
 	             	if (i != arr.length - 1) {
@@ -34,7 +45,13 @@ public class Insertsort {
 	     	System.out.print("]");
 	     	System.out.println("");
 		}
-		public static void main(String args[]) {   	 
+
+		/**
+		 * Main method used as a tester for the sorting algorithm.
+		 * 
+		 * @param args - empty array.
+		 */
+		public static void main(final String args[]) {   	 
 	   	 	long start = System.currentTimeMillis();
 	    	int arr[] = {12, 11, 13, 5, 6};
 	    	Insertsort ob = new Insertsort();   	 

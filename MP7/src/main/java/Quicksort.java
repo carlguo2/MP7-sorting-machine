@@ -38,7 +38,15 @@ public class Quicksort {
 		System.out.println("");
 	}
 
-	public void quicksort(int[] arr, int lo, int hi) {
+	/**
+	 * Actual method that does the quick sort algorithm.
+	 * Combines partition and partitionWrapper method.
+	 * 
+	 * @param arr - array that needs to be sorted
+	 * @param lo - low boundary of array to be sorted.
+	 * @param hi - upper boundary of array to be sorted.
+	 */
+	public void quicksort(final int[] arr, final int lo, final int hi) {
 		if (hi > lo + 1) { // size is 3 or more
 			int m = partitionWrapper(arr, lo, hi);
 			quicksort(arr, lo, m - 1);
@@ -51,7 +59,16 @@ public class Quicksort {
 		}
 	}
 
-	public int partitionWrapper(int[] arr, int lo, int hi) {
+	/**
+	 * This method uses partition method to move pivot into correct location
+	 * and move elements around.
+	 * 
+	 * @param arr - array we are sorting.
+	 * @param lo - low boundary of array.
+	 * @param hi - upper boundary of array.
+	 * @return index where pivot is currently stored.
+	 */
+	public int partitionWrapper(final int[] arr, final int lo, final int hi) {
 		// swap low index and median of three index
 		int med = medianOfThree(arr, lo, hi);
 		System.out.println("By median of three, pivot is: " + arr[med] +
@@ -71,7 +88,16 @@ public class Quicksort {
 		return m;
 	}
 
-	public int partition(int[] arr, int lo, int hi, int pivot) {
+	/**
+	 * Method used to recursively partition the array with selected pivot.
+	 * 
+	 * @param arr - array to be sorted.
+	 * @param lo - low boundary of array.
+	 * @param hi - upper boundary of array.
+	 * @param pivot - pivot used to partition array in quick sort.
+	 * @return returns index partition should be at.
+	 */
+	public int partition(final int[] arr, final int lo, final int hi, final int pivot) {
 		System.out.println("Partition from lo index: " + lo + " to hi index: " + hi);
 		if (hi == lo) {
 			if (arr[lo] < pivot) {
@@ -92,7 +118,11 @@ public class Quicksort {
 		}
 	}
 
-	public static void main(String[] args) { // useful as a tester
+	/**
+	 * Main method to use as a tester for quicksort.
+	 * @param args - empty array.
+	 */
+	public static void main(final String[] args) { // useful as a tester
 		// start calculating runtime:
 		long start = System.currentTimeMillis();
 		int arr[] = { 10, 7, 8, 9, 1, 5, 6, 4, 6, 8, 10, 5, 7, 3, 2, 6, 3};
@@ -100,7 +130,7 @@ public class Quicksort {
 		Quicksort ob = new Quicksort();
 		ob.quicksort(arr, 0, n - 1);
 		System.out.println("Final array: ");
-		ob.printArr(arr);
+		Quicksort.printArr(arr);
 		long end = System.currentTimeMillis();
 		System.out.println("Total runtime of program: " + (end - start) + "ms");
 	}

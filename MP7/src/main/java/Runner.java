@@ -4,15 +4,19 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Runner {
-	// add selection sort
-	public static void main(String[] args) {
+	/**
+	 * Main program that offers options and interacts with the users.
+	 * 
+	 * @param args - empty array.
+	 */
+	public static void main(final String[] args) {
 		boolean isRunning = true; // keeps the program running until user wants to stop.
+		Scanner s = new Scanner(System.in);
 		while (isRunning) {
 			System.out.println("Welcome to Sorting Machine. What would you like to do?");
 			System.out.println("Sort an Array");
 			System.out.println("Compare runtimes");
 			System.out.println("Stop");
-			Scanner s = new Scanner(System.in);
 			String actionInput = s.nextLine(); // take input of the action wanted.
 			boolean isValid = false;
 			while (!isValid) { // check whether a valid option was picked or not
@@ -111,9 +115,19 @@ public class Runner {
 				System.out.println("");
 			}
 		}
+		if (!isRunning) {   //close scanner once finished
+			s.close();
+		}
 	}
 
-	public static int[] createArr(int len) {
+	/**
+	 * Creates the array of given size with random numbers ranging
+	 * from 1 to 100.
+	 * 
+	 * @param len - length of desired array.
+	 * @return new array of desired length and randomized elements.
+	 */
+	public static int[] createArr(final int len) {
 		int[] arr = new int[len];
 		for (int i = 0; i < len; i++) {
 			arr[i] = (int) (Math.random() * 100 + 1);
@@ -121,7 +135,14 @@ public class Runner {
 		return arr;
 	}
 
-	public static long quickSortTest(int[] arr) {
+	/**
+	 * Quicksort method which sorts the array, shows steps
+	 * and keeps track runtime by millisecond.
+	 * 
+	 * @param arr - initial unsorted array.
+	 * @return - runtime of sorting algorithm.
+	 */
+	public static long quickSortTest(final int[] arr) {
 		// start calculating runtime:
 		long start = System.currentTimeMillis();
 		int n = arr.length;
@@ -136,7 +157,14 @@ public class Runner {
 		return end - start;
 	}
 
-	public static long bubbleSortTest(int[] arr) {
+	/**
+	 * Bubblesort method which sorts the array, shows steps
+	 * and keeps track runtime by millisecond.
+	 * 
+	 * @param arr - initial unsorted array.
+	 * @return - runtime of sorting algorithm.
+	 */
+	public static long bubbleSortTest(final int[] arr) {
 		long start = System.currentTimeMillis();
 		Bubblesort ob = new Bubblesort();
 		System.out.println("Given Array: ");
@@ -149,7 +177,14 @@ public class Runner {
 		return end - start;
 	}
 
-	public static long insertSortTest(int[] arr) {
+	/**
+	 * Insertion sort method that sorts the array, shows steps
+	 * and keeps track of the runtime.
+	 * 
+	 * @param arr - intial unsorted array
+	 * @return runtime of sorting algorithm.
+	 */
+	public static long insertSortTest(final int[] arr) {
 		long start = System.currentTimeMillis();
 		Insertsort ob = new Insertsort();
 		System.out.println("Given Array: ");
@@ -162,7 +197,14 @@ public class Runner {
 		return end - start;
 	}
 
-	public static long mergeSortTest(int[] arr) {
+	/**
+	 * Merge sort method to sort the array, show the steps,
+	 * and to keep track of the runtime.
+	 * 
+	 * @param arr - initial unsorted array.
+	 * @return runtime of sorting algorithm.
+	 */
+	public static long mergeSortTest(final int[] arr) {
 		long start = System.currentTimeMillis();
 		System.out.println("Given Array: ");
 		Mergesort.printArr(arr);
