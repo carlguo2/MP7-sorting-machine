@@ -1,7 +1,15 @@
-README
-Sorting Machine - Carl Guo and Joel Zhang
+This is a simple sorting machine.
+Made by Joel Zhang (netID jz32) and Carl Guo (netID)
 
-This program is meant for the programmer to play around with the sorting algorithms given. The runner prompts the user with 
-two options: Sort an array and compare runtimes. When sorting an array, the program will prompt four options for the user: quicksort, 
-bubblesort, insertionsort, and mergesort. Compare runtimes will compare and display the runtimes of each of these algorithms on an 
-unsorted array.
+
+You can use this to sort data array with four sorting methods:
+-Insertion sort;
+-Bubble sort;
+-Quick sort;
+-Merge sort;
+and the console will tell you how each method sorts the data.
+Besides, each call to each method will give you expected best case runtime and worst case runtime in big O notation, 
+and after calling not only sorted array is returned but also specific process of every steps are shown in order to tell you
+ how the method sorts the data.You can also compare the running time among different sorting methods and watch which one would 
+ be the fastest way with given data size.
+
